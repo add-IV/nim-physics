@@ -1,7 +1,6 @@
-import engine/physics/world
-import engine/physics/body
+import engine
 
-var world = initWorld()
+var world = engine.initWorld()
 
 # Create example body
 world.bodies.add makeBody(0, 0, 1, 1)

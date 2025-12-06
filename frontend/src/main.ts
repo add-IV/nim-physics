@@ -1,8 +1,6 @@
-import { initPhysics, stepPhysics, getPositions } from "./physics_interface";
+import { stepPhysics, getPositions_ } from "./physics_interface";
 
 async function main() {
-    await initPhysics();
-
     let last = performance.now();
 
     function frame(t: number) {
@@ -11,7 +9,7 @@ async function main() {
 
         stepPhysics(dt);
 
-        const pos = getPositions();
+        const pos = getPositions_();
         console.log("body:", pos[0], pos[1]);
 
         requestAnimationFrame(frame);

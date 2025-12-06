@@ -1,15 +1,13 @@
-let wasm: any;
+import {stepWorld, getPositions} from "./wasm/engine";
 
-export async function initPhysics() {
-    wasm = await import("/wasm/engine.js"); // served by vite
-}
+console.log(stepWorld);
 
 export function stepPhysics(dt: number) {
-    wasm.stepWorld(dt);
+    stepWorld(dt);
 }
 
-export function getPositions() {
-    const ptr = wasm.getPositions();
-    return new Float32Array(wasm.memory.buffer, ptr, 2); // x,y
+export function getPositions_() {
+    const ptr = getPositions();
+    return new Float32Array(memory.buffer, ptr, 2); // x,y
 }
 

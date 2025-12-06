@@ -10,9 +10,10 @@ srcDir        = "src"
 # Dependencies
 
 requires "nim >= 2.0.8"
-requires "engine#../engine >= 0.1.0"
+requires "engine >= 0.1.0"
 
 task wasm, "builds the wasm":
-    exec "mkdir -p ../frontend/public/wasm"
-    exec "nim js -d:release -o:../frontend/public/wasm/engine.js src/wasm_bindings.nim"
-
+    exec "nimble uninstall -i engine"
+    exec "( cd ../engine ; nimble install )"
+    exec "mkdir -p ../frontend/src/wasm"
+    exec "nim js -d:release -o:../frontend/src/wasm/engine.js src/wasm.nim"
