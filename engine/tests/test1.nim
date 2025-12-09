@@ -8,5 +8,18 @@
 import unittest
 
 import engine
-test "can add":
-  check add(5, 5) == 10
+
+test "can add body":
+  var world = engine.initWorld()
+  world.bodies.add makeBody(0, 0, 1, 1)
+  let r: engine.Rect = (x: 0, y: 0, w: 0, h: 0)
+  echo world.bodies[0]
+  check world.bodies[0].boundingBox == r
+
+
+test "can add rect":
+  var world = engine.initWorld()
+  world.bodies.add makeRect(0, 0, 10, 10, 1, 1)
+  let r: engine.Rect = (x: 0, y: 0, w: 10, h: 10)
+  echo world.bodies[0]
+  check world.bodies[0].boundingBox == r

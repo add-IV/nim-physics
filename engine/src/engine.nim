@@ -1,3 +1,3 @@
-import engine/[world, body]
+import engine/[world, body, types]
 
-export world, body
+export world, body, types

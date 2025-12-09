@@ -8,8 +8,7 @@ proc initWorld*(): World =
   World(bodies: @[])
 
 proc step*(w: var World, dt: float32) =
-  ## (Very simple physics)
+  ## just move
   for b in w.bodies.mitems:
-    b.pos.x += b.vel.x * dt
-    b.pos.y += b.vel.y * dt
-
+    b.x += b.vel.x * dt
+    b.y += b.vel.y * dt
