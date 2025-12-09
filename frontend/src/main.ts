@@ -1,5 +1,3 @@
-import { stepPhysics, getPositions_ } from "./physics_interface";
-
 async function main() {
     let last = performance.now();
 
@@ -7,9 +5,9 @@ async function main() {
         const dt = (t - last) / 1000;
         last = t;
 
-        stepPhysics(dt);
+        stepWorld(dt);
 
-        const pos = getPositions_();
+        const pos = getPositions();
         console.log("body:", pos[0], pos[1]);
 
         requestAnimationFrame(frame);
