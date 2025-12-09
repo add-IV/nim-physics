@@ -17,10 +17,11 @@ async function main() {
 
         stepWorld(dt);
 
-        const pos = getPositions();
+        const pos = getBodies();
+        console.log(pos);
         ctx?.clearRect(lastRect[0] -1, lastRect[1] -1, lastRect[2]+1, lastRect[3]+1)
-        ctx?.fillRect(pos[1].x, pos[1].y, 10, 10);
-        lastRect = [pos[1].x, pos[1].y, 10, 10]
+        ctx?.fillRect(pos[0].x, pos[0].y, 10, 10);
+        lastRect = [pos[0].x, pos[0].y, 10, 10]
 
         requestAnimationFrame(frame);
     }

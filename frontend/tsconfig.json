@@ -22,5 +22,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "public/wasm"]
+  "include": ["src", "public/wasm", "public/wrapper"]
 }
