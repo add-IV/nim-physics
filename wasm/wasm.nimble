@@ -16,4 +16,4 @@ task wasm, "builds the wasm":
     exec "nimble uninstall -i engine"
     exec "( cd ../engine ; nimble install )"
     exec "mkdir -p ../frontend/src/wasm"
-    exec "nim js -d:release -o:../frontend/src/wasm/engine.js --app:lib src/wasm.nim"
+    exec "nim js -d:danger -o:../frontend/src/wasm/engine.js --app:lib src/wasm.nim"
